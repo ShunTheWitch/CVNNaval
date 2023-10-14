@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBoatBaseBuildable">
+		<defName>CVNAnnihilation_Blueprint</defName>
+		<label>Annihilation</label>
+		<description>The Annihilation Class Destroyer, is a keystone to mechanoid naval forces, forming the backbone of any attack or defense, packing the lion's share of firepower while being bulky in it's own right while projecting a large shield to safeguard it's allies, this ship is armed with Six heavy lead charge blasters One burst Mortar and One Annihilation Tripple Cannon.</description>
+		<designationCategory>Biotech</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Annihilation/Annihilation</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(7, 29)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>15000</WorkToBuild>
+			<Flammability>0.65</Flammability>
+		</statBases>
+		
+		<size>(7, 29)</size>
+		
+		<researchPrerequisites>
+			<li>UltraMechtech</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<CVNMechComposite>38</CVNMechComposite>
+			<ComponentIndustrial>35</ComponentIndustrial>
+			<ComponentSpacer>10</ComponentSpacer>
+			<SubcoreHigh>10</SubcoreHigh>
+			<NanostructuringChip>8</NanostructuringChip>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>CVNAnnihilation</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

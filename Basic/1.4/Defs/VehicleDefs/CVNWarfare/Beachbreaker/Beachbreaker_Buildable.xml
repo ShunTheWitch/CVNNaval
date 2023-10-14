@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBoatBaseBuildable">
+		<defName>Beachbreaker_Blueprint</defName>
+		<label>Beach Breaker</label>
+		<description>The Beach Breaker is a heavy amphibious siegecraft which is desired to face the enemy, slowly advance and destroy, with two upgraded heavy charge blasters one hellshell cannon and one standard auto mortar this craft will crawl from the sea to besiege coastal or inland foritifications, Attacking from the front is largely a fools errand but attacking the heatsinks and unstable power cells that fuel this behemoth will remove the wind from it's sails and deal hefty damage to it and it's allied forces nearby.</description>
+		<designationCategory>Biotech</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Beachbreaker/Beachbreaker</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(6, 12)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>5000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		
+		<size>(6, 12)</size>
+		
+		<researchPrerequisites>
+			<li>StandardMechtech</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<CVNMechComposite>10</CVNMechComposite>
+			<Plasteel>1000</Plasteel>
+			<ComponentIndustrial>60</ComponentIndustrial>
+			<SubcoreRegular>5</SubcoreRegular>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>Beachbreaker</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

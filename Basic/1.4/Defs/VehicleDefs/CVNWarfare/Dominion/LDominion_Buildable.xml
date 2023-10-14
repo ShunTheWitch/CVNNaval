@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBoatBaseBuildable">
+		<defName>LDominion_Blueprint</defName>
+		<label>Dominion</label>
+		<description>The Dominion aircraft carrier is the largest Mechanoid any normal human would be unlucky enough to see, the imposing control towers large power cells pitch black runways and devistatingly accurate heavy charge blasters are all a sight on their own, but once it begins launching planes hellbent on blowing you up just by ramming themselves into you, there truly is no hope for the inhabitants of any rimworld.</description>
+		<designationCategory>Biotech</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/LDominion/LDominion</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(12, 33)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>5000</WorkToBuild>
+			<Flammability>0.65</Flammability>
+		</statBases>
+		
+		<size>(15, 33)</size>
+		<researchPrerequisites>
+			<li>UltraMechtech</li>
+		</researchPrerequisites>
+		<costList>
+			<CVNMechComposite>44</CVNMechComposite>
+			<ComponentIndustrial>45</ComponentIndustrial>
+			<ComponentSpacer>15</ComponentSpacer>
+			<SubcoreHigh>12</SubcoreHigh>
+			<NanostructuringChip>6</NanostructuringChip>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>LDominion</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

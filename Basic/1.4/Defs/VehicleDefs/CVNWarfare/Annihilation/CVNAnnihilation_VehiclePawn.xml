@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="BaseSeaVehicle">
+		<defName>CVNAnnihilation</defName>
+		<label>Annihilation</label>
+		<description>The Annihilation Class Destroyer, is a keystone to mechanoid naval forces, forming the backbone of any attack or defense, packing the lion's share of firepower while being bulky in it's own right while projecting a large shield to safeguard it's allies, this ship is armed with Six heavy lead charge blasters One burst Mortar and One Annihilation Tripple Cannon.</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Annihilation/Annihilation</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(7, 29)</drawSize>
+			<color>(155, 155, 155)</color>
+		</graphicData>
+		
+		<fillPercent>0.7</fillPercent>
+		
+		<nameable>false</nameable>
+		<buildDef>CVNAnnihilation_Blueprint</buildDef>
+		
+		<size>(7, 29)</size>
+		
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Sea</vehicleType>
+				
+		<statBases>
+			<ArmorRating_Blunt>1.56</ArmorRating_Blunt>
+			<ArmorRating_Sharp>1.64</ArmorRating_Sharp>
+			<ArmorRating_Heat>2.0</ArmorRating_Heat>
+			<MarketValue>1565</MarketValue>
+			<Flammability>0</Flammability>
+		<BandwidthCost>30</BandwidthCost>
+		<ControlTakingTime>20</ControlTakingTime>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>8000</Mass>
+			<MoveSpeed>3.6</MoveSpeed>
+			<CargoCapacity>9500</CargoCapacity>
+			<RepairRate>20</RepairRate>
+		</vehicleStats>
+		
+		
+		<race>
+			<baseBodySize>3.25</baseBodySize>
+		</race>
+		
+		<properties>
+			<track Class = "Vehicles.VehicleTrack_Wake">
+				<speed>1</speed>
+			</track>
+			
+			<roles>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>3</slots>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Engine</key>
+				<label>Hydro Electric Generator</label>
+				<health>5080</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontCommand</key>
+				<label>Front Scan module</label>
+				<health>3060</health>
+				<depth>External</depth>
+				
+			</li>
+			<li>
+				<key>Cargocenter</key>
+				<label>Central Cargo Holds</label>
+				<health>2060</health>
+				<depth>External</depth>
+				
+			</li>
+			<li>
+				<key>RearCommand</key>
+				<label>Rear Command Tower</label>
+				<health>3060</health>
+				<depth>External</depth>
+				
+			</li>
+			<li>
+				<key>FrontSidePanel</key>
+				<label>Front Hull Panels</label>
+				<health>8600</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RearSidePanel</key>
+				<label>Rear Hull Panels</label>
+				<health>8600</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftSidePanel</key>
+				<label>Left Hull Panels</label>
+				<health>8600</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightSidePanel</key>
+				<label>Right Hull Panels</label>
+				<health>8600</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+			</li>
+		</components>
+		
+		<comps>
+      <li Class="VehicleMechanitorControl.CompProperties_MechanitorControl">
+		<bandwidthGain>0</bandwidthGain>
+		<mechControlRange>0</mechControlRange>
+      </li>
+      <li Class="CompProperties_OverseerSubject"></li>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>52</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptAirProjectiles>true</interceptAirProjectiles>
+        <color>(1.0, 0.4, 0.4)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>3000</hitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+        <chargeDurationTicks>1800</chargeDurationTicks><!-- 30s -->
+        <rechargeHitPointsIntervalTicks>120</rechargeHitPointsIntervalTicks>
+        <minIdleAlpha>0.2</minIdleAlpha>
+      </li>
+			<li Class="Vehicles.CompProperties_VehicleTurrets">
+				<turrets>
+					<li>
+						<turretDef>CVNAnnihilation_bullet</turretDef>
+						
+						<renderProperties>
+							<north>(0, 9.5)</north>
+							<south>(0, -9.5)</south>
+							<east>(10.4, 0.6)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon1</key>
+					</li>
+					<li>
+						<turretDef>CVNAnnihilationmg</turretDef>
+						
+						<renderProperties>
+							<north>(-1.5, 5.5)</north>
+							<south>(-1.7, -5.2)</south>
+							<east>(5.4, 2)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>mg1</key>
+					</li>
+					<li>
+						<turretDef>CVNAnnihilationmg</turretDef>
+						
+						<renderProperties>
+							<north>(1.5, 5.5)</north>
+							<south>(1.7, -5.2)</south>
+							<east>(5.4, -1)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>mg2</key>
+					</li>
+					<li>
+						<turretDef>CVNAnnihilationmg</turretDef>
+						
+						<renderProperties>
+							<north>(2.0, -3.7)</north>
+							<south>(1.9, 4.2)</south>
+							<east>(-3.9, 2.3)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>mg3</key>
+					</li>
+					<li>
+						<turretDef>CVNAnnihilationmg</turretDef>
+						
+						<renderProperties>
+							<north>(-2.0, -3.7)</north>
+							<south>(-1.9, 4.2)</south>
+							<east>(-3.9, -1.1)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>mg4</key>
+					</li>
+					<li>
+						<turretDef>CVNAnnihilationmg</turretDef>
+						
+						<renderProperties>
+							<north>(-1.2, -9.5)</north>
+							<south>(-1.2, 9.8)</south>
+							<east>(-9.6, 1.6)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>mg5</key>
+					</li>
+					<li>
+						<turretDef>CVNAnnihilationmg</turretDef>
+						
+						<renderProperties>
+							<north>(1.2, -9.5)</north>
+							<south>(1.2, 9.8)</south>
+							<east>(-9.6, -0.4)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>mg6</key>
+					</li>
+					<li>
+						<turretDef>Plasmaslugmort</turretDef>
+						
+						<renderProperties>
+							<north>(0, -10.9)</north>
+							<south>(0, 11.2)</south>
+							<east>(-11.1, 0.6)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>mort</key>
+					</li>
+				</turrets>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

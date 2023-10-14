@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBoatBaseBuildable">
+		<defName>ThunderheadUT_Blueprint</defName>
+		<label>Thunder Head MKII</label>
+		<description>A terrifying sight at first the Thunderhead is a mechanoid that is clearly based on sharks from earth, it's sacks can hold both living and mechanical units to be trasported and supported, This variant employs instead two heavy charge blasters overclocked and allowed to cool by the ocean waters it constantly circulates through it's systems, this variant also has heavily strengthed armor and hull.</description>
+		<designationCategory>Biotech</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Thunderhead/Thunderhead</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(4, 7)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>5000</WorkToBuild>
+			<Flammability>0.65</Flammability>
+		</statBases>
+		
+		<size>(4, 6)</size>
+		
+		<researchPrerequisites>
+			<li>HighMechtech</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<CVNMechComposite>3</CVNMechComposite>
+			<Plasteel>420</Plasteel>
+			<ComponentIndustrial>20</ComponentIndustrial>
+			<SubcoreHigh>2</SubcoreHigh>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>ThunderheadUT</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

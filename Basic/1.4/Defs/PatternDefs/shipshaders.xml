@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+    <Vehicles.PatternDef>
+    <defName>Shun_Dazzle1</defName>
+    <label>Dazzle One</label>
+    <path>Patterns/Dazzle/Dazzle1</path>
+    </Vehicles.PatternDef>
+
+    <Vehicles.PatternDef>
+    <defName>Shun_Cursed1</defName>
+    <label>Cursed</label>
+    <path>Patterns/Cursed/Cursed</path>
+    </Vehicles.PatternDef>
+</Defs>

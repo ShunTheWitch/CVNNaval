@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="BaseSeaVehicle">
+		<defName>LDominion</defName>
+		<label>Dominion</label>
+		<description>The Dominion aircraft carrier is the largest Mechanoid any normal human would be unlucky enough to see, the imposing control towers large power cells pitch black runways and devistatingly accurate heavy charge blasters are all a sight on their own, but once it begins launching planes hellbent on blowing you up just by ramming themselves into you, there truly is no hope for the inhabitants of any rimworld.</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/LDominion/LDominion</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(18, 39)</drawSize>
+			<color>(155, 155, 155)</color>
+		</graphicData>
+		
+		<fillPercent>0.7</fillPercent>
+		
+		<nameable>false</nameable>
+		<buildDef>LDominion_Blueprint</buildDef>
+		
+		<size>(15, 33)</size>
+		
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Sea</vehicleType>
+				
+		<statBases>
+			<ArmorRating_Blunt>0.36</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.64</ArmorRating_Sharp>
+			<ArmorRating_Heat>2.0</ArmorRating_Heat>
+			<MarketValue>1565</MarketValue>
+			<Flammability>0</Flammability>
+		<BandwidthCost>0</BandwidthCost>
+		<ControlTakingTime>20</ControlTakingTime>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>80</Mass>
+			<MoveSpeed>4.6</MoveSpeed>
+			<CargoCapacity>10500</CargoCapacity>
+			<RepairRate>1</RepairRate>
+		</vehicleStats>
+		
+		
+		<race>
+			<baseBodySize>3.25</baseBodySize>
+		</race>
+		
+		<properties>
+			<track Class = "Vehicles.VehicleTrack_Wake">
+				<speed>1</speed>
+			</track>
+			
+			<roles>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>3</slots>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Engine</key>
+				<label>Hydro Electric Generator</label>
+				<health>5080</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontCommand</key>
+				<label>Front Scan module</label>
+				<health>3060</health>
+				<depth>External</depth>
+				
+			</li>
+			<li>
+				<key>Cargocenter</key>
+				<label>Central Cargo Holds</label>
+				<health>2060</health>
+				<depth>External</depth>
+				
+			</li>
+			<li>
+				<key>RearCommand</key>
+				<label>Rear Command Tower</label>
+				<health>3060</health>
+				<depth>External</depth>
+				
+			</li>
+			<li>
+				<key>FrontSidePanel</key>
+				<label>Front Hull Panels</label>
+				<health>8600</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RearSidePanel</key>
+				<label>Rear Hull Panels</label>
+				<health>8600</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftSidePanel</key>
+				<label>Left Hull Panels</label>
+				<health>8600</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightSidePanel</key>
+				<label>Right Hull Panels</label>
+				<health>8600</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+			</li>
+		</components>
+		
+		<comps>
+      <li Class="VehicleMechanitorControl.CompProperties_MechanitorControl">
+		<bandwidthGain>22</bandwidthGain>
+		<mechControlRange>45</mechControlRange>
+      </li>
+      <li Class="CompProperties_OverseerSubject"></li>
+			<li Class="Vehicles.CompProperties_VehicleTurrets">
+				<turrets>
+					<li>
+						<turretDef>CVNDominionMGbasic</turretDef>
+						
+						<renderProperties>
+							<north>(-1.1, 14.7)</north>
+							<south>(-1, -13.4)</south>
+							<east>(14.1, -1.4)</east>
+						</renderProperties>
+						
+						<gizmoLabel>CVNDominionMGbasic</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon2</key>
+					</li>
+					<li>
+						<turretDef>CVNDominionMGbasic</turretDef>
+						
+						<renderProperties>
+							<north>(1.1, 14.7)</north>
+							<south>(1, -13.4)</south>
+							<east>(14.1, 0.7)</east>
+						</renderProperties>
+						
+						<gizmoLabel>CVNDominionMGbasic</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon1</key>
+					</li>
+					<li>
+						<turretDef>CVNDominionMGbasic</turretDef>
+						
+						<renderProperties>
+							<north>(-5.1, 3.4)</north>
+							<south>(-5.2, -1.8)</south>
+							<east>(2.4, -5.4)</east>
+						</renderProperties>
+						
+						<gizmoLabel>CVNDominionMGbasic</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon3</key>
+					</li>
+					<li>
+						<turretDef>CVNDominionMGbasic</turretDef>
+						
+						<renderProperties>
+							<north>(5.4, 3.4)</north>
+							<south>(5.2, -1.8)</south>
+							<east>(2.4, 5.2)</east>
+						</renderProperties>
+						
+						<gizmoLabel>CVNDominionMGbasic</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon4</key>
+					</li>
+					<li>
+						<turretDef>CVNDominionMGbasic</turretDef>
+						
+						<renderProperties>
+							<north>(-4.6, -4.4)</north>
+							<south>(-4.6, 5.6)</south>
+							<east>(-5.1, -4.9)</east>
+						</renderProperties>
+						
+						<gizmoLabel>CVNDominionMGbasic</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon5</key>
+					</li>
+					<li>
+						<turretDef>CVNDominionMGbasic</turretDef>
+						
+						<renderProperties>
+							<north>(4.6, -4.4)</north>
+							<south>(4.6, 5.6)</south>
+							<east>(-5.1, 4.5)</east>
+						</renderProperties>
+						
+						<gizmoLabel>CVNDominionMGbasic</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon6</key>
+					</li>
+					<li>
+						<turretDef>lowreaverkill</turretDef>
+						
+						<renderProperties>
+							<north>(0, 0)</north>
+							<south>(0, 0)</south>
+							<east>(0, 0)</east>
+						</renderProperties>
+						
+						<gizmoLabel>reaver</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>reaver</key>
+					</li>
+				</turrets>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

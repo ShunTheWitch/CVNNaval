@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/Vehicles.VehicleDef[defName="LDominion"]/comps</xpath>
+    <value>
+<li Class="Thek_VFSpawner.CompProperties_SpawnerVehicle">
+	<thingDefsConsumedForVehicle>
+	<li>M7Kit</li>
+	<li>HRKit</li>
+	</thingDefsConsumedForVehicle>
+	<rangeArea>1984</rangeArea>
+	<cooldownTimeInTicks>1200</cooldownTimeInTicks>
+	</li>
+    </value>
+    </Operation>
+</Patch>

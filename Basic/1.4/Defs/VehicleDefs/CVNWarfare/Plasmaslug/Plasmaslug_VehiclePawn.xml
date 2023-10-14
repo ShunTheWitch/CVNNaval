@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="BaseSeaVehicle">
+		<defName>Plasmaslug</defName>
+		<label>Plasma Slug</label>
+		<description>It's strange and alien appearence does not do well to hide this mechanoid variant's deadly arsenal, it's primary weapon being three heavy plasma breakers, all firing in five round bursts of deadly vaporizing plasma which damages a small area, these weapons are horribly inaccurate however due to the unstable nature with virtually no guidence simply being ejected from a small port on the barrel and let to go as they please, this causes wide spread destruction meaning that while the intended target itself may be unlikely to be harmed, their allies and fortifications will be left as slag, a smaller note being this auto mortar on it's back uses high capacity incendiary shells.</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Plasmaslug/seaslug</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(10.3, 13.8)</drawSize>
+			<color>(155, 155, 155)</color>
+		</graphicData>
+		
+		<fillPercent>0.7</fillPercent>
+		
+		<nameable>false</nameable>
+		<buildDef>Plasmaslug_Blueprint</buildDef>
+		
+		<size>(5, 11)</size>
+		
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Sea</vehicleType>
+				
+		<statBases>
+			<ArmorRating_Blunt>1.20</ArmorRating_Blunt>
+			<ArmorRating_Sharp>1.14</ArmorRating_Sharp>
+			<ArmorRating_Heat>2.0</ArmorRating_Heat>
+			<MarketValue>1565</MarketValue>
+			<Flammability>0</Flammability>
+		<BandwidthCost>6</BandwidthCost>
+		<ControlTakingTime>5</ControlTakingTime>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>180</Mass>
+			<MoveSpeed>5.6</MoveSpeed>
+			<CargoCapacity>1750</CargoCapacity>
+			<RepairRate>1</RepairRate>
+		</vehicleStats>
+		
+		
+		<race>
+			<baseBodySize>8.25</baseBodySize>
+		</race>
+		
+		<properties>
+			<defaultBiomesImpassable>false</defaultBiomesImpassable>
+			<defaultTerrainImpassable>false</defaultTerrainImpassable>
+			<customTerrainCosts AllowTerrainWithTag="Water" PathCost="1"/>
+
+			<track Class = "Vehicles.VehicleTrack_Wake">
+				<speed>1</speed>
+			</track>
+			
+			<roles>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>10</slots>
+				</li>
+			</roles>
+		</properties>
+
+		<components>
+			<li>
+				<key>Engineleft</key>
+				<label>Unstable Powercell Left</label>
+				<health>1</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<chance>0.1</chance>
+						<maxHealth>1</maxHealth>
+						<radius>15</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(0, 0)</li>
+						<li>(-1, 0)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Engineright</key>
+				<label>Unstable Powercell Right</label>
+				<health>1</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<chance>0.1</chance>
+						<maxHealth>1</maxHealth>
+						<radius>15</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(1, 0)</li>
+						<li>(2, 0)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontSidePanel</key>
+				<label>Front Head Armor Platess</label>
+				<health>866</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RearSidePanel</key>
+				<label>Tail Armor Plates</label>
+				<health>866</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftSidePanel</key>
+				<label>Left Armor Plates</label>
+				<health>866</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightSidePanel</key>
+				<label>Right Armor Plates</label>
+				<health>866</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<side>Right</side>
+				</hitbox>
+			</li>
+		</components>
+		
+		<comps>
+      <li Class="VehicleMechanitorControl.CompProperties_MechanitorControl">
+		<bandwidthGain>0</bandwidthGain>
+		<mechControlRange>0</mechControlRange>
+      </li>
+      <li Class="CompProperties_OverseerSubject"></li>
+			<li Class="Vehicles.CompProperties_VehicleTurrets">
+				<turrets>
+					<li>
+						<turretDef>Plasmaslugmg</turretDef>
+						
+						<renderProperties>
+							<north>(-1.4, 2.6)</north>
+							<south>(-1.5, -2.4)</south>
+							<east>(2.6, -1.4)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon2</key>
+					</li>
+					<li>
+						<turretDef>Plasmaslugmg</turretDef>
+						
+						<renderProperties>
+							<north>(1.4, 2.6)</north>
+							<south>(1.5, -2.4)</south>
+							<east>(2.6, 1.4)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon1</key>
+					</li>
+					<li>
+						<turretDef>Plasmaslugmg</turretDef>
+						
+						<renderProperties>
+							<north>(0, 3.3)</north>
+							<south>(0, -3.1)</south>
+							<east>(3.3, 0)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted>-30, 30</angleRestricted>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon3</key>
+					</li>
+					<li>
+						<turretDef>Plasmaslugmort</turretDef>
+						
+						<renderProperties>
+							<north>(0, -0.5)</north>
+							<south>(0, 1)</south>
+							<east>(-0.5, 0)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon4</key>
+					</li>
+				</turrets>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

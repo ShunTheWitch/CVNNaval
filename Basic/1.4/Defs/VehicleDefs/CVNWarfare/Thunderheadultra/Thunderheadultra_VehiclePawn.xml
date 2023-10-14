@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="BaseSeaVehicle">
+		<defName>ThunderheadUT</defName>
+		<label>Thunder Head MKII</label>
+		<description>A terrifying sight at first the Thunderhead is a mechanoid that is clearly based on sharks from earth, it's sacks can hold both living and mechanical units to be trasported and supported, This variant employs instead two heavy charge blasters overclocked and allowed to cool by the ocean waters it constantly circulates through it's systems, this variant also has heavily strengthed armor and hull.</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Thunderhead/Thunderhead</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(4, 7)</drawSize>
+			<color>(155, 155, 155)</color>
+		</graphicData>
+		
+		<fillPercent>0.7</fillPercent>
+		
+		<nameable>false</nameable>
+		<buildDef>ThunderheadUT_Blueprint</buildDef>
+		
+		<size>(4, 6)</size>
+		
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Sea</vehicleType>
+				
+		<statBases>
+			<ArmorRating_Blunt>0.66</ArmorRating_Blunt>
+			<ArmorRating_Sharp>1.14</ArmorRating_Sharp>
+			<ArmorRating_Heat>2.0</ArmorRating_Heat>
+			<MarketValue>1565</MarketValue>
+			<Flammability>0</Flammability>
+		<BandwidthCost>4</BandwidthCost>
+		<ControlTakingTime>5</ControlTakingTime>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>120</Mass>
+			<MoveSpeed>6.6</MoveSpeed>
+			<CargoCapacity>750</CargoCapacity>
+			<RepairRate>2</RepairRate>
+		</vehicleStats>
+		
+		
+		<race>
+			<baseBodySize>3.25</baseBodySize>
+		</race>
+		
+		<properties>
+			<track Class = "Vehicles.VehicleTrack_Wake">
+				<speed>1</speed>
+			</track>
+			
+			<roles>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>5</slots>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Engine</key>
+				<label>Hydro Electric Generator</label>
+				<health>280</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontSidePanel</key>
+				<label>Front Armor Panels</label>
+				<health>560</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RearSidePanel</key>
+				<label>Rear Armor Panels</label>
+				<health>460</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftSidePanel</key>
+				<label>Left Armor Panels</label>
+				<health>460</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightSidePanel</key>
+				<label>Right Armor Panels</label>
+				<health>460</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+			</li>
+		</components>
+		
+		<comps>
+      <li Class="VehicleMechanitorControl.CompProperties_MechanitorControl">
+		<bandwidthGain>0</bandwidthGain>
+		<mechControlRange>0</mechControlRange>
+      </li>
+      <li Class="CompProperties_OverseerSubject"></li>
+			<li Class="Vehicles.CompProperties_VehicleTurrets">
+				<turrets>
+					<li>
+						<turretDef>shorkcannonultra</turretDef>
+						
+						<renderProperties>
+							<north>(-1.4, 2.6)</north>
+							<south>(-1.4, -2.4)</south>
+							<east>(2.4, -1.4)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon2</key>
+					</li>
+					<li>
+						<turretDef>shorkcannonultra</turretDef>
+						
+						<renderProperties>
+							<north>(1.4, 2.6)</north>
+							<south>(1.4, -2.4)</south>
+							<east>(2.4, 1.4)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>cannon1</key>
+					</li>
+				</turrets>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

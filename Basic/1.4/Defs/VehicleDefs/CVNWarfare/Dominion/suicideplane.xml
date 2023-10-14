@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<ThingDef ParentName="BaseBullet">
+		<defName>lowreaverkill_bullet</defName>
+		<label>Low Reaver</label>
+		<thingClass>Projectile_Explosive</thingClass>
+		
+		<graphicData>
+      			<texPath>Things/Projectiles/MechPlaneProjectile</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(7, 7)</drawSize>
+		</graphicData>
+		
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>200</damageAmountBase>
+			<explosionRadius>8.1</explosionRadius>
+			<speed>120</speed>
+      			<flyOverhead>true</flyOverhead>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+
+		</projectile>
+	</ThingDef>
+	
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>lowreaverkill</defName>
+		<label>Lowreaverlauncher</label>
+		<description>A catapult which launches dumb low reavers attempting to ram the enemy directly</description>
+		
+		<turretType>Rotatable</turretType>
+		
+		<projectile>lowreaverkill_bullet</projectile>
+		<reloadTimer>30.5</reloadTimer>
+		<warmUpTimer>0.4</warmUpTimer>
+		<chargePerAmmoCount>2</chargePerAmmoCount>
+		<magazineCapacity>2</magazineCapacity>
+		<genericAmmo>true</genericAmmo>
+		
+		<hitFlags>IntendedTarget</hitFlags>
+		
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>0.95</rotationSpeed>
+		
+		<projectileOffset>1.1</projectileOffset>
+		
+		<minRange>30</minRange>
+		<maxRange>500.0</maxRange>
+		
+		
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>500</ticksBetweenShots>
+				<ticksBetweenBursts>500</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/LDominion/justafuckingsquare</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(1, 1)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>CVNMechComposite</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+</Defs>

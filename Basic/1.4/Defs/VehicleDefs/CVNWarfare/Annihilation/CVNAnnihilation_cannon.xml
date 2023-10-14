@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<ThingDef ParentName="BaseBullet">
+		<defName>CVNAnnihilation_bullet</defName>
+		<label>Annihilationcannonshell</label>
+		<thingClass>Projectile_Explosive</thingClass>
+		
+		<graphicData>
+      			<texPath>Things/Projectiles/Annhilationrounds</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(3, 3)</drawSize>
+		</graphicData>
+		
+		<projectile>
+			<damageDef>Vaporize</damageDef>
+			<damageAmountBase>200</damageAmountBase>
+			<explosionRadius>10.1</explosionRadius>
+			<speed>80</speed>
+      			<flyOverhead>true</flyOverhead>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+		</projectile>
+	</ThingDef>
+	
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>CVNAnnihilation_bullet</defName>
+		<label>Tripple Annihilation Cannon</label>
+		<description>A medium machine gun paired and given to one subcore that controls the field of fire</description>
+		
+		<turretType>Rotatable</turretType>
+		<shotSound>Shot_Autocannon</shotSound>
+		
+		<projectile>CVNAnnihilation_bullet</projectile>
+		<reloadTimer>20.5</reloadTimer>
+		<warmUpTimer>0.4</warmUpTimer>
+		<chargePerAmmoCount>3</chargePerAmmoCount>
+		<magazineCapacity>30</magazineCapacity>
+		<genericAmmo>true</genericAmmo>
+		
+		<hitFlags>IntendedTarget</hitFlags>
+		
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>0.95</rotationSpeed>
+		
+		<projectileOffset>1.1</projectileOffset>
+		
+		<minRange>30</minRange>
+		<maxRange>100.0</maxRange>
+		
+		
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>3</shotsPerBurst>
+				<ticksBetweenShots>10</ticksBetweenShots>
+				<ticksBetweenBursts>40</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Annihilation/AnnihilationCannon</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(5, 5)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>CVNAmmoRedstandard</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+</Defs>
