@@ -155,6 +155,38 @@
         <rechargeHitPointsIntervalTicks>120</rechargeHitPointsIntervalTicks>
         <minIdleAlpha>0.2</minIdleAlpha>
       </li>
+	  <li Class="taranchuk_ocean.CompProperties_Extractor">
+		<label>Extract minerals</label>
+		<description>placeholder</description>
+		<iconPath>UI/ExtractMinerals</iconPath>
+		<spawnInInventory>true</spawnInInventory>
+		<cooldownTicks>2500</cooldownTicks>
+		<things>
+			<li>
+				<thingDef>Steel</thingDef>
+				<count>50~100</count>
+				<weight>2</weight>
+			</li>
+			<li>
+				<thingDef>Plasteel</thingDef>
+				<count>5~10</count>
+				<weight>1</weight>
+			</li>
+		</things>
+	  </li>
+	  
+	  <li Class="taranchuk_ocean.CompProperties_Spawner">
+		<spawnInInventory>true</spawnInInventory>
+		<cooldownTicks>2500</cooldownTicks>
+		<passive>true</passive>
+		<things>
+			<li>
+				<thingDef>Wastepack</thingDef>
+				<count>1</count>
+			</li>
+		</things>
+	  </li>
+	  
 			<li Class="Vehicles.CompProperties_VehicleTurrets">
 				<turrets>
 					<li>
