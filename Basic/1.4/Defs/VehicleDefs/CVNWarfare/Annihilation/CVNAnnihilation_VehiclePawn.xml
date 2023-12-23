@@ -37,7 +37,7 @@
 		
 		<vehicleStats>
 			<Mass>8000</Mass>
-			<MoveSpeed>3.6</MoveSpeed>
+			<MoveSpeed>5.6</MoveSpeed>
 			<CargoCapacity>9500</CargoCapacity>
 			<RepairRate>20</RepairRate>
 		</vehicleStats>
@@ -143,7 +143,7 @@
       </li>
       <li Class="CompProperties_OverseerSubject"></li>
       <li Class="CompProperties_ProjectileInterceptor">
-        <radius>52</radius>
+        <radius>22</radius>
         <interceptGroundProjectiles>true</interceptGroundProjectiles>
         <interceptAirProjectiles>true</interceptAirProjectiles>
         <color>(1.0, 0.4, 0.4)</color>
@@ -158,9 +158,9 @@
 	  <li Class="taranchuk_ocean.CompProperties_Extractor">
 		<label>Extract minerals</label>
 		<description>placeholder</description>
-		<iconPath>UI/ExtractMinerals</iconPath>
+		<iconPath>Gizmo/drillin</iconPath>
 		<spawnInInventory>true</spawnInInventory>
-		<cooldownTicks>2500</cooldownTicks>
+		<cooldownTicks>30000</cooldownTicks>
 		<things>
 			<li>
 				<thingDef>Steel</thingDef>
@@ -177,7 +177,7 @@
 	  
 	  <li Class="taranchuk_ocean.CompProperties_Spawner">
 		<spawnInInventory>true</spawnInInventory>
-		<cooldownTicks>2500</cooldownTicks>
+		<cooldownTicks>60000</cooldownTicks>
 		<passive>true</passive>
 		<things>
 			<li>
